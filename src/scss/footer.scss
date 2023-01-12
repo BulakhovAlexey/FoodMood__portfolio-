@@ -1,0 +1,97 @@
+//====================================================================================================
+.footer {
+    text-align: left;
+    &__body {
+        @include adaptiveValue("padding-top",89 ,30 );
+        @include adaptiveValue("padding-bottom",201 ,60 );
+    }
+    &__row {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        
+    }
+    &__main {
+        flex: 1 1 100%;
+        padding: rem(10);
+        max-width: rem(380);
+        min-width: rem(230); 
+    }
+    &__logo {
+        @include adaptiveValue("font-size", 24, 18);
+        line-height: math.div(36 , 24);
+        color: $col-yellow;
+    }
+    &__text {
+        margin: em(47, 17) 0;
+        font-weight: 400;
+        @include adaptiveValue("font-size", 17,14 );
+        line-height: math.div(26 , 17);
+    }
+    &__social {
+    }
+    &__social-link {
+        &:not(:last-child) {
+            margin-right: rem(50);
+        }
+        i {
+            cursor: pointer;
+            font-size: rem(30);
+            &:hover{
+                color: $col-yellow;
+                transition: color .3s;
+            }
+        }
+
+    }
+    &__copy {
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: em(43,18);
+        font-weight: 400;
+        @include adaptiveValue("font-size", 18, 14);
+        line-height: math.div(27 , 18);
+        a {
+            padding: 0 rem(10);
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+.list-footer {
+    padding: rem(10);
+    min-width: rem(230);
+    &__title {
+        font-weight: 600;
+        @include adaptiveValue("font-size", 24, 18);
+        line-height: math.div(36 , 24);
+        margin-bottom: em(47,24);
+    }
+    
+    &__list {
+        li {
+            &:not(:last-child) {
+                margin-bottom: rem(13);
+            }
+        }
+    }
+    &__link {
+        font-weight: 400;
+        @include adaptiveValue("font-size", 17, 15);
+        line-height: math.div(26 , 17);
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+
+@media (max-width: em(1100)){
+    .footer__main{
+        text-align: center;
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+}
+//====================================================================================================

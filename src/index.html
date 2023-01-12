@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+  @@include('html/head.html',{ "title":"FOODMOOD" })
+  <body>
+    <div class="wrapper">
+      @@include('html/header.html',{})
+      <main class="page">
+        <section class="start-block">
+          <div class="start-block__container">
+            <p class="start-block__text">Only $15.00</p>
+            <h1 class="start-block__title">AUTHENTIC ITALIAN PIZZA</h1>
+            <div class="start-block__discount discount-box">
+              <div data-watch class="discount-box__size">
+                <p class="discount-box__percent">20%</p>
+                <p class="discount-box__name-percent">discount</p>
+              </div>
+              <h3 class="discount-box__description">
+                <a href="#!"
+                  >On your first order, if you order online through our App!</a
+                >
+              </h3>
+            </div>
+            <a href="#!" class="start-block__button">ORDER ONLINE</a>
+          </div>
+        </section>
+        <section data-watch="navigator" class="categories">
+          <div class="categories__container">
+            <h2 data-watch class="categories__subtitle content-subtitle">
+              TOP FOODS
+            </h2>
+            <h1 class="categories__title content-title">Our Categories</h1>
+            <div class="categories__row">
+              <div class="categories__item item-categories">
+                <figure class="item-categories__photo">
+                  <img src="@img/pizza.jpg" alt="pizza" />
+                  <figcaption class="item-categories__capture">
+                    <h4 class="item-categories__name">Pizza</h4>
+                    <p class="item-categories__desc">20 Restaurants Foods</p>
+                  </figcaption>
+                </figure>
+              </div>
+              <div class="categories__item item-categories">
+                <figure class="item-categories__photo">
+                  <img src="@img/pasta.jpg" alt="Pasta" />
+                  <figcaption class="item-categories__capture">
+                    <h4 class="item-categories__name">Pasta</h4>
+                    <p class="item-categories__desc">15 Restaurants Foods</p>
+                  </figcaption>
+                </figure>
+              </div>
+              <div class="categories__item item-categories">
+                <figure class="item-categories__photo">
+                  <img src="@img/shakes.jpg" alt="Shakes" />
+                  <figcaption class="item-categories__capture">
+                    <h4 class="item-categories__name">Shakes</h4>
+                    <p class="item-categories__desc">15 Restaurants Foods</p>
+                  </figcaption>
+                </figure>
+              </div>
+              <div class="categories__item item-categories">
+                <figure class="item-categories__photo">
+                  <img src="@img/burger.jpg" alt="Burger" />
+                  <figcaption class="item-categories__capture">
+                    <h4 class="item-categories__name">Burger</h4>
+                    <p class="item-categories__desc">25 Restaurants Foods</p>
+                  </figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
+        </section>
+        <div class="delivery">
+          <div class="delivery__container">
+            <div class="delivery__box box-delivery">
+              <div class="box-delivery__item">
+                <div class="box-delivery__image">
+                  <img
+                    src="@img/icons/car.svg"
+                    alt="car"
+                    class="box-delivery__icon"
+                  />
+                </div>
+                <h3 class="box-delivery__title">
+                  Free Shipping on First Order
+                </h3>
+                <p class="box-delivery__desc">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
+                  do eiusmod
+                </p>
+              </div>
+              <div class="box-delivery__item">
+                <div class="box-delivery__image">
+                  <img
+                    src="@img/icons/burger.svg"
+                    alt="burger"
+                    class="box-delivery__icon"
+                  />
+                </div>
+                <h3 class="box-delivery__title">Variety of Dishes</h3>
+                <p class="box-delivery__desc">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
+                  do eiusmod
+                </p>
+              </div>
+              <div class="box-delivery__item">
+                <div class="box-delivery__image">
+                  <img
+                    src="@img/icons/clock.svg"
+                    alt="clock"
+                    class="box-delivery__icon"
+                  />
+                </div>
+                <h3 class="box-delivery__title">Thirty Minutes Delivery</h3>
+                <p class="box-delivery__desc">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
+                  do eiusmod
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <section class="outlets">
+          <div class="outlets__container">
+            <h2 class="outlets__subtitle content-subtitle">OUR OUTLETS</h2>
+            <h1 class="outlets__title content-title">
+              Find an Outlet Near You
+            </h1>
+            <div class="outlets__cards cards-outlet">
+              <div class="cards-outlet__location">
+                <div class="cards-outlet__image">
+                  <img src="@img/outlet1.jpg" alt="outlet1" />
+                </div>
+                <a href="#!" class="cards-outlet__icon-link"
+                  ><i class="fa-solid fa-location-dot"></i
+                ></a>
+                <a href="#!" class="cards-outlet__adress-link"
+                  >762 Fulton St San Francisco, California(CA), 94102</a
+                >
+              </div>
+              <div class="cards-outlet__location">
+                <div class="cards-outlet__image">
+                  <img src="@img/outlet2.jpg" alt="outlet2" />
+                </div>
+                <a href="#!" class="cards-outlet__icon-link"
+                  ><i class="fa-solid fa-location-dot"></i
+                ></a>
+                <a href="#!" class="cards-outlet__adress-link"
+                  >66 Ceres St San Francisco, California(CA), 94124</a
+                >
+              </div>
+              <div class="cards-outlet__location">
+                <div class="cards-outlet__image">
+                  <img src="@img/outlet3.jpg" alt="outlet3" />
+                </div>
+                <a href="#!" class="cards-outlet__icon-link"
+                  ><i class="fa-solid fa-location-dot"></i
+                ></a>
+                <a href="#!" class="cards-outlet__adress-link"
+                  >766 Sutter St San Francisco, California(CA), 94109</a
+                >
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="get-started">
+          <div class="get-started__container">
+            <div class="get-started__body">
+              <h2 class="get-started__subtitle content-subtitle">
+                PIZZA DELIVERY
+              </h2>
+              <h1 class="get-started__title content-title">
+                Get Started Today!
+              </h1>
+              <h4 class="get-started__text">
+                Everything you need to build an amazing food restaurant
+                responsive website.
+              </h4>
+              <p class="get-started__desc">
+                Hendrerit in vulputate velit esse molestie consequat, vel illum
+                dolore eu feugiat nulla facilisis at vero eros et accumsan et
+                iusto odio dignissim qui blandit praesent luptatum zzril delenit
+                augue duis.
+              </p>
+              <div class="get-started__promote promote-box">
+                <div class="promote-box__item">
+                  <div class="promote-box__logo">
+                    <img src="@img/icons/food-order.svg" alt="food-order" />
+                  </div>
+                  <h5 class="promote-box__name">Food Order</h5>
+                  <p class="promote-box__desc">
+                    Food is the necessity of life. It provides nutrition,
+                    sustenance growth to human body.
+                  </p>
+                </div>
+                <div class="promote-box__item">
+                  <div class="promote-box__logo">
+                    <img src="@img/icons/promote.svg" alt="promote" />
+                  </div>
+                  <h5 class="promote-box__name">Promote Restaurant</h5>
+                  <p class="promote-box__desc">
+                    Food can be classified into cereals, pulses, nuts and
+                    oilseeds, vegetable
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div data-da=".get-started__body,992,3" class="get-started__image">
+              <img src="@img/delivery.jpg" alt="delivery" />
+            </div>
+          </div>
+        </section>
+        <section data-watch="navigator" class="team">
+          <div class="team__container">
+            <h2 class="team__subtitle content-subtitle">TEAM MEMBERS</h2>
+            <h1 class="team__title content-title">Meet Our Best Team</h1>
+            <div class="team__gallery gallery-iteam">
+              <div class="gallery-iteam__chef">
+                <figure class="gallery-iteam__photo">
+                  <div class="gallery-iteam__image-wrap">
+                    <img src="@img/team-image-1.jpg" alt="chef" />
+                  </div>
+                  <figcaption class="gallery-iteam__description">
+                    <a href="#!" class="gallery-item__link"
+                      ><h3 class="gallery-iteam__chef-name">Alizeh Anderson</h3>
+                    </a>
+                    <h4 class="gallery-iteam__chef-position">Senior Chef</h4>
+                  </figcaption>
+                </figure>
+              </div>
+              <div class="gallery-iteam__chef">
+                <figure class="gallery-iteam__photo">
+                  <div class="gallery-iteam__image-wrap">
+                    <img src="@img/team-image-2.jpg" alt="chef" />
+                  </div>
+                  <figcaption class="gallery-iteam__description">
+                    <a href="#!" class="gallery-item__link">
+                      <h3 class="gallery-iteam__chef-name">Angelina John</h3>
+                    </a>
+                    <h4 class="gallery-iteam__chef-position">Master Chef</h4>
+                  </figcaption>
+                </figure>
+              </div>
+              <div class="gallery-iteam__chef">
+                <figure class="gallery-iteam__photo">
+                  <div class="gallery-iteam__image-wrap">
+                    <img src="@img/team-image-3.jpg" alt="chef" />
+                  </div>
+                  <figcaption class="gallery-iteam__description">
+                    <a href="#!" class="gallery-item__link"
+                      ><h3 class="gallery-iteam__chef-name">Andre Smith</h3>
+                    </a>
+                    <h4 class="gallery-iteam__chef-position">Professor</h4>
+                  </figcaption>
+                </figure>
+              </div>
+              <div class="gallery-iteam__chef">
+                <figure class="gallery-iteam__photo">
+                  <div class="gallery-iteam__image-wrap">
+                    <img src="@img/team-image-4.jpg" alt="chef" />
+                  </div>
+                  <figcaption class="gallery-iteam__description">
+                    <a href="#!" class="gallery-item__link"
+                      ><h3 class="gallery-iteam__chef-name">
+                        Christina Chi
+                      </h3></a
+                    >
+                    <h4 class="gallery-iteam__chef-position">Psychologist</h4>
+                  </figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section data-watch="navigator" class="discount">
+          <div class="discount__container">
+            <div class="discount__text">
+              <h1 class="discount__title">Get 20% Discount</h1>
+              <h2 class="discount__subtitle">
+                Get flat 20% off on your first order though The Foodmood App!
+              </h2>
+              <a href="" class="discount__link">
+                <img src="@img/google.png" alt="google" />
+              </a>
+              <a href="" class="discount__link">
+                <img src="@img/app-store.jpg" alt="app-store" />
+              </a>
+            </div>
+            <div class="discount__image">
+              <img src="@img/discount.png" alt="discount" />
+            </div>
+          </div>
+        </section>
+        <div class="logos">
+          <div class="logos__container">
+            <div class="logos__item">
+              <img src="@img/icons/logo1.svg" alt="logo1" />
+            </div>
+            <div class="logos__item">
+              <img src="@img/icons/logo2.svg" alt="logo2" />
+            </div>
+            <div class="logos__item">
+              <img src="@img/icons/logo3.svg" alt="logo3" />
+            </div>
+            <div class="logos__item">
+              <img src="@img/icons/logo4.svg" alt="logo4" />
+            </div>
+          </div>
+        </div>
+      </main>
+      @@include('html/footer.html',{})
+    </div>
+    <script
+      src="https://kit.fontawesome.com/9ca418d431.js"
+      crossorigin="anonymous"
+    ></script>
+    @@include('html/js.html',{})
+  </body>
+</html>

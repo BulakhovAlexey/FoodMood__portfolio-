@@ -1,0 +1,499 @@
+//====================================================================================================
+// start-block
+
+.start-block {
+    @include adaptiveValue("padding-bottom",184 ,40);
+    @include adaptiveValue("padding-top",149 ,120);
+    background: url(@img/bg-start.jpg) no-repeat center;
+    min-height: rem(889);
+    color: $col-white;
+    &__text {
+        font-weight: 700;
+        @include adaptiveValue("font-size", 26, 18);
+        line-height: math.div(39 , 26);
+        margin-bottom: em(25,26);
+    }
+    &__title {
+        @include adaptiveValue("font-size", 64, 26);
+        line-height: math.div(96 , 64);
+        margin-bottom: em(26,64);
+    }
+    &__button {
+        padding: rem(12) rem(50);
+        font-weight: 700;
+        font-size: rem(14);
+        line-height: math.div(21 , 14);
+        background-color: $col-yellow;
+        border-radius: 6px;
+        &:hover {
+			box-Shadow: 2px -2px 9px 2px rgba(255,255,255,0.5);
+			transition: all .3s;
+		}
+    }
+}
+.discount-box {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: em(79,17);
+    &__size {
+        position: relative;
+        width: 205px;
+        height: 205px;
+        background: $col-yellow;
+        border-radius: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        &._watcher-view {
+            animation: anim 2s linear infinite;
+        }
+    }
+    &__percent {
+        font-weight: 700;
+        font-size: rem(64);
+        line-height: math.div(60 , 64);
+    }
+    &__name-percent {
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: rem(32);
+        line-height: math.div(48 , 32);
+    }
+    &__description {
+        padding-left: rem(30);
+        max-width: rem(324);
+        @include adaptiveValue("font-size",36 ,25 );
+        line-height: math.div(54 , 36);
+        &:hover{
+            text-shadow: 5px 3px 9px rgba($col-yellow, .7);
+			transition: all .3s;
+        }
+        @media (max-width: em(559)){
+            padding: rem(10) 0 0 0;      
+        }
+    }
+}
+
+@keyframes circle {
+    0% {
+        right: -200%;
+    }
+    50% {
+        transform: rotate(60deg); 
+    }
+    100% {
+        right: 0%;
+    }
+}
+
+@keyframes anim {
+    0% {
+        box-shadow: 1px 1px 60px 2px rgba(255,255,255,0.53);
+    }
+    50% {
+        box-shadow: 1px 1px 60px 15px rgba(255,255,255,0.53);
+    }
+    100% {
+        box-shadow: 1px 1px 60px 2px rgba(255,255,255,0.53);
+    }
+}
+
+//====================================================================================================
+ //categories
+
+ .categories {
+    padding: rem(27) 0 rem(40) 0;
+    text-align: center;
+    &__row {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(277px,1fr));
+        gap: rem(30)
+    }
+}
+.content-subtitle {
+    position: relative;
+    @include adaptiveValue("font-size", 18, 13);
+    line-height: math.div(27 , 18);
+    color: $col-yellow;
+}
+.content-title {
+    @include adaptiveValue("font-size", 55, 30);
+    line-height: math.div(82 , 55);
+}
+
+.item-categories {
+    &__capture{
+        text-align: center;
+        margin-top: rem(-80);
+    }
+    &__name {
+        font-weight: 700;
+        @include adaptiveValue("font-size", 24, 18);
+        line-height: math.div(36 , 24);
+        margin-bottom: em(14,24);
+    }
+    &__desc {
+        @include adaptiveValue("font-size", 20, 15);
+        line-height: math.div(30 , 20);
+    }
+}
+
+//========================================================================================================================================================
+
+//delivery
+
+.delivery {
+    background-color: $col-yellow;
+    &__box {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px,1fr));
+        gap: rem(30);
+        @media (max-width:$mobile){
+             gap: rem(15); 
+        }
+    }
+}
+.box-delivery {
+    text-align: center;
+    &__item {
+        color: $col-white;
+        padding: rem(30) rem(10);
+        display: flex;
+        flex-direction: column;
+        max-width: rem(300);
+        margin: 0 auto;
+       @media (max-width:$mobile){
+         padding: rem(15) rem(10); 
+       }
+    }
+    &__image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $col-white;
+        border-radius: 50%;
+        width: rem(115);
+        height: rem(115);
+        margin: 0 auto em(42,17) auto;
+    }
+    &__title {
+        font-weight: 700;
+        @include adaptiveValue("font-size", 20, 16);
+        line-height: math.div(30 , 20);
+        max-width: rem(170);
+        margin: 0 auto em(22,20) auto;
+    }
+    &__desc {
+        margin: auto 0 0 0;
+        @include adaptiveValue("font-size", 17, 14);
+        line-height: math.div(26 , 17);
+    }
+}
+
+//========================================================================================================================================================
+
+//outlets
+
+.outlets {
+    
+    text-align: center;
+    @include adaptiveValue("padding-top",76 ,30 );
+    @include adaptiveValue("padding-bottom",44 ,20 );
+    background: #F5F5F5;
+    &__title {
+        margin-bottom: em(24,55);
+    }
+
+    &__cards {
+        
+    }
+}
+
+.cards-outlet {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px,1fr));
+    gap: rem(30);
+    &__image {
+        position: relative;
+        padding-bottom: percent(440,380);
+        img {
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            object-fit: cover;
+        }  
+    }
+    &__icon-link {
+        display: block;
+    }
+    &__adress-link {
+        font-weight: 700;
+        @include adaptiveValue("font-size", 20, 16);
+        line-height: math.div(30 , 20);
+        &:hover{
+            text-decoration: underline;
+            transition: all 0.3s ease 0s;
+        }
+    }
+}
+.fa-location-dot {
+    margin-top: rem(10);
+    padding: rem(10);
+    font-size: rem(25);
+    color: rgba($col-yellow, .7);
+    &:hover{
+        color: rgba($col-yellow, 1);
+        transition: all .3s;
+    }
+}
+
+//========================================================================================================================================================
+//delivery
+
+
+.get-started {
+     @include adaptiveValue("padding-top",108,30);
+     @include adaptiveValue("padding-bottom",94,20);
+	&__container {
+        display: flex;
+        justify-content: space-between;
+	}
+	&__body {
+        flex: 0 1 50%;
+        padding: rem(0) rem(10) rem(10) rem(0);
+        @media (max-width:$tablet){
+            flex: 1 1 100%;
+        }
+	}
+	&__title {
+        display: inline-block;
+        padding-bottom: rem(16);
+        margin-bottom: rem(16);
+        position: relative;
+        &::after{
+            position: absolute;
+            content: '';
+            width: percent(175,525);
+            height: rem(5);
+            left: 0;
+            bottom: 0;
+            background-color: $col-yellow;
+        }
+	}
+	&__text {
+        @include adaptiveValue("font-size", 26, 20);
+        line-height: math.div(39 , 26);
+        margin-bottom: em(16,26);
+	}
+	&__desc {
+        @include adaptiveValue("font-size", 17,14 );
+        line-height: math.div(26,17);
+        margin-bottom: em(41,17);
+	}
+	&__image {
+        flex: 0 1 50%;
+        img {
+           width: 100%;
+           height: auto; 
+        }
+        @media (max-width:$tablet){
+            padding-bottom: rem(10);
+            flex: 1 1 100%;
+        } 
+	}
+}
+.promote-box {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(277px,1fr));
+    gap: rem(15);
+	&__logo {
+        img {
+            width: rem(100);
+            height: rem(100);
+            object-fit: cover;
+        }
+	}
+	&__name {
+        @include adaptiveValue("font-size", 20, 17);
+        line-height: math.div(30 , 20);
+        margin: em(19,20) 0 em(9,20) 0;
+	}
+	&__desc {
+        max-width: rem(277);
+        font-weight: 400;
+        @include adaptiveValue("font-size", 17, 14);
+        line-height: math.div(26 , 17);
+	}
+}
+
+//========================================================================================================================================================
+
+//team
+
+.team {
+    text-align: center;
+    @include adaptiveValue("padding-top", 47,30 );
+    @include adaptiveValue("padding-bottom", 65, 40);
+    &__title {
+        display: inline-block;
+        padding-bottom: rem(25);
+        margin-bottom: em(84,55);
+        position: relative;
+        &::after{
+            content:'';
+            position: absolute;
+            width: percent(205,561);
+            height: rem(5);
+            bottom: 0;
+            left: 50%;
+            transform: translate(-50%);
+            background-color: $col-yellow;
+        }
+    }
+    &__gallery {
+    }
+}
+
+.gallery-iteam {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(277px,1fr));
+    gap: rem(30);
+    @media (max-width:$mobile){
+         gap: rem(15); 
+    }
+    &__image-wrap {
+        position: relative;
+        padding-bottom: percent(350,277);
+        img{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }  
+    }
+    &__description {
+        text-align: left;
+    }
+    &__chef-name {
+        @include adaptiveValue("font-size", 24, 20);
+        line-height: math.div(36 , 24);
+        margin-bottom: em(13,24);
+        margin-top: em(37,24);
+        &:hover {
+            text-decoration: underline;
+            color: rgba($col-yellow, .5);
+            transition: all 0.3s ease 0s;
+        }
+    }
+    &__link{
+    }
+    &__chef-position {
+        font-weight: 400;
+        @include adaptiveValue("font-size", 20, 16);
+        line-height: math.div(30 , 20);
+    }
+}
+
+//========================================================================================================================================================
+
+//discount
+
+.discount {
+    @include adaptiveValue("padding-top", 85, 30);
+    @include adaptiveValue("padding-bottom", 135, 40);
+    background: linear-gradient(91.02deg, #FFCC00 17.25%, rgba(255, 204, 0, 0) 178.38%);
+    color: $col-white;
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @media (max-width:$mobileSmall){
+            flex-wrap: wrap; 
+       }
+    }
+    &__text {
+        flex: 0 1 50%;
+        padding-right: rem(10);
+        @media (max-width:$mobileSmall){
+            flex: 1 1 100%; 
+       }
+    }
+    &__title {
+        font-weight: 700;
+        @include adaptiveValue("font-size",55 ,35 );
+        line-height: math.div(82 , 55);
+        margin-bottom: em(32,55);
+    }
+    &__subtitle {
+        @include adaptiveValue("font-size", 25, 18);
+        line-height: math.div(39 , 25);
+        margin-bottom: em(73,25);
+    }
+    &__link {
+        &:not(:last-child) {
+            margin-right: rem(12);
+        }
+        img {
+            &:hover {
+                box-shadow: 5px -5px 10px -1px rgba(0,0,0,0.61);
+                transition: all 0.3s ease 0s;
+            }
+            width: 176px;
+            height: 50px;
+            border-radius: 10px;
+            object-fit: cover;
+            margin-bottom: rem(20);
+        }
+    }
+    &__image {
+        flex: 0 1 50%;
+        @media (max-width:$mobileSmall){
+             flex: 1 1 100%; 
+             padding-top: rem(20);
+        }
+        img{
+            width: 100%;
+            height: auto;
+        }
+    }
+}
+
+//========================================================================================================================================================
+
+//logos
+.logos {
+    @include adaptiveValue("padding-top",75 , 30);
+    @include adaptiveValue("padding-bottom",75 , 30);
+    &__container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(277px,1fr));
+        gap: rem(30);
+        @media (max-width:$mobile){
+             gap: rem(15); 
+        }
+    }
+    &__item {
+        position: relative;
+        padding-bottom: percent(200,277);
+        img{
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+
+
+
