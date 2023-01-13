@@ -2,7 +2,7 @@ import { isMobile } from "../files/functions.js";
 import { flsModules } from "../files/modules.js";
 
 /*
-	data-fp - оболонка
+	data-fp - ракушка
 	data-fp-section - секції
 
 	Перехід на певний слайд

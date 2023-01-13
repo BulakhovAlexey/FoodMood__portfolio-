@@ -65,8 +65,9 @@ $responsiveType: 1;
 html {
 	&.loaded {
 		.className{}   // имя класса для которого ловим onLoad
-		.discount-box__size {
-			//animation: circle 2s ease-out;
+		.start-block__title,
+		.start-block__text {
+			transform: translateY(0);
 		}
 	}
 }
@@ -146,6 +147,11 @@ body {
 			}
 		}
 	}
+}
+
+.text-wrapper {
+	display: inline-block;
+	overflow: hidden;
 }
 
 // Соединение основных стилей, шаблонов (заготовки) и вспомогательных классов

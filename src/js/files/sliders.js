@@ -7,7 +7,7 @@
 // Мы подключаем Swider Slider с node_modules
 // При необходимости подключите дополнительные модули слайдера, указав на них в {} черезКому
 // Пример: { Navigation, Autoplay }
-import Swiper, { Navigation } from "swiper";
+import Swiper, { Autoplay } from "swiper";
 /*
 Основные модули слайдера:
 Navigation, Pagination, Autoplay, 
@@ -19,7 +19,7 @@ EffectFade, Lazy, Manipulation
 // Основные стили
 import "../../scss/base/swiper.scss";
 // Полный набор стилей с scss/libs/swiper.scss
-//import "../../scss/libs/swiper.scss";
+import "../../scss/libs/swiper.scss";
 // Полный набор стилей с node_modules
 // import 'swiper/css';
 
@@ -27,31 +27,31 @@ import "../../scss/base/swiper.scss";
 function initSliders() {
   // Список ползунков
   // Проверьте, находится ли слайдер на странице
-  if (document.querySelector(".swiper")) {
+  if (document.querySelector(".logos__slider")) {
     // Укажите навык желаемого ползунка
     // создаем слайдеры через  -- ; --
-    new Swiper(".NAME__slider", {
+    new Swiper(".logos__slider", {
       // selector
-      modules: [Navigation],
-      observer: true,
-      observeParents: true,
+      modules: [Autoplay],
+      //observer: true,
+      //observeParents: true,
       slidesPerView: 4,
-      spaceBetween: 0,
-      autoHeight: true,
-      speed: 800,
+      spaceBetween: 20,
+      //autoHeight: true,
+      speed: 1000,
       //touchRatio: 0,
       //simulateTouch: false,
-      //loop: true,
+      loop: true,
       //preloadImages: false,
       //lazy: true,
-      /*
-			// Последствия
-			effect: 'fade',
-			autoplay: {
-				delay: 3000,
-				disableOnInteraction: false,
-			},
-			*/
+
+      // Последствия
+      effect: "fade",
+      autoplay: {
+        delay: 1000,
+        disableOnInteraction: false,
+      },
+
       // Пагінація
       /*
 			pagination: {
@@ -67,32 +67,24 @@ function initSliders() {
 			},
 			*/
       // Кнопки "вліво/вправо"
-      navigation: {
-        prevEl: ".NAME__button-prev", //selector
-        nextEl: ".NAME__button-next", //selector
+      // navigation: {
+      //   prevEl: ".NAME__button-prev", //selector
+      //   nextEl: ".NAME__button-next", //selector
+      // },
+
+      //Брейкпоінти
+      breakpoints: {
+        320: {
+          slidesPerView: 2,
+          spaceBetween: 10,
+          autoHeight: true,
+        },
+        992: {
+          slidesPerView: 4,
+          spaceBetween: 20,
+        },
       },
-      /*
-			// Брейкпоінти
-			breakpoints: {
-				640: {
-					slidesPerView: 1,
-					spaceBetween: 0,
-					autoHeight: true,
-				},
-				768: {
-					slidesPerView: 2,
-					spaceBetween: 20,
-				},
-				992: {
-					slidesPerView: 3,
-					spaceBetween: 20,
-				},
-				1268: {
-					slidesPerView: 4,
-					spaceBetween: 30,
-				},
-			},
-			*/
+
       // События
       on: {},
     });

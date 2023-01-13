@@ -7,8 +7,10 @@
       <main class="page">
         <section class="start-block">
           <div class="start-block__container">
-            <p class="start-block__text">Only $15.00</p>
-            <h1 class="start-block__title">AUTHENTIC ITALIAN PIZZA</h1>
+            <div class="start-block__text-wrapper text-wrapper">
+              <p class="start-block__text">Only $15.00</p>
+              <h1 class="start-block__title">AUTHENTIC ITALIAN PIZZA</h1>
+            </div>
             <div class="start-block__discount discount-box">
               <div data-watch class="discount-box__size">
                 <p class="discount-box__percent">20%</p>
@@ -28,7 +30,11 @@
             <h2 data-watch class="categories__subtitle content-subtitle">
               TOP FOODS
             </h2>
-            <h1 class="categories__title content-title">Our Categories</h1>
+            <div class="text-wrapper">
+              <h1 data-watch class="categories__title content-title">
+                Our Categories
+              </h1>
+            </div>
             <div class="categories__row">
               <div class="categories__item item-categories">
                 <figure class="item-categories__photo">
@@ -119,12 +125,14 @@
             </div>
           </div>
         </div>
-        <section class="outlets">
+        <section data-watch class="outlets">
           <div class="outlets__container">
             <h2 class="outlets__subtitle content-subtitle">OUR OUTLETS</h2>
-            <h1 class="outlets__title content-title">
-              Find an Outlet Near You
-            </h1>
+            <div class="text-wrapper">
+              <h1 class="outlets__title content-title">
+                Find an Outlet Near You
+              </h1>
+            </div>
             <div class="outlets__cards cards-outlet">
               <div class="cards-outlet__location">
                 <div class="cards-outlet__image">
@@ -162,7 +170,7 @@
             </div>
           </div>
         </section>
-        <section class="get-started">
+        <section data-watch data-watch-threshold="0.5" class="get-started">
           <div class="get-started__container">
             <div class="get-started__body">
               <h2 class="get-started__subtitle content-subtitle">
@@ -292,17 +300,29 @@
         </section>
         <div class="logos">
           <div class="logos__container">
-            <div class="logos__item">
-              <img src="@img/icons/logo1.svg" alt="logo1" />
-            </div>
-            <div class="logos__item">
-              <img src="@img/icons/logo2.svg" alt="logo2" />
-            </div>
-            <div class="logos__item">
-              <img src="@img/icons/logo3.svg" alt="logo3" />
-            </div>
-            <div class="logos__item">
-              <img src="@img/icons/logo4.svg" alt="logo4" />
+            <div class="logos__slider swiper">
+              <div class="logos__wrapper swiper-wrapper">
+                <div class="logos__slide swiper-slide">
+                  <div class="logos__item">
+                    <img src="@img/icons/logo1.svg" alt="logo1" />
+                  </div>
+                </div>
+                <div class="logos__slide swiper-slide">
+                  <div class="logos__item">
+                    <img src="@img/icons/logo2.svg" alt="logo2" />
+                  </div>
+                </div>
+                <div class="logos__slide swiper-slide">
+                  <div class="logos__item">
+                    <img src="@img/icons/logo3.svg" alt="logo3" />
+                  </div>
+                </div>
+                <div class="logos__slide swiper-slide">
+                  <div class="logos__item">
+                    <img src="@img/icons/logo4.svg" alt="logo4" />
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
