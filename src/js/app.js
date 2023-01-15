@@ -14,7 +14,7 @@ import * as flsFunctions from "./files/functions.js";
 flsFunctions.isWebp();
 
 /* Добавление класса touch для HTML Если браузер мобильный */
-// flsFunctions.addTouchClass();
+flsFunctions.addTouchClass();
 
 /* Добавление loaded для HTML После полной загрузки страницы */
 flsFunctions.addLoadedClass();

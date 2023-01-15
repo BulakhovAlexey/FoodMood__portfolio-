@@ -4,7 +4,7 @@
 .start-block {
     @include adaptiveValue("padding-bottom",184 ,40);
     @include adaptiveValue("padding-top",149 ,120);
-    background: url(@img/bg-start.jpg) no-repeat center;
+    background: url(@img/bg-start.jpg) no-repeat  top center fixed;
     min-height: rem(889);
     color: $col-white;
     &__text {
@@ -110,6 +110,7 @@
  //categories
 
  .categories {
+    box-shadow: 0px -2px 11px 5px rgb(255 255 255 / 74%);
     padding: rem(27) 0 rem(40) 0;
     text-align: center;
     &._watcher-view .categories__title{
@@ -312,6 +313,11 @@
         line-height: math.div(26,17);
         margin-bottom: em(41,17);
 	}
+    &__text,
+    &__desc{
+        position: relative;
+        z-index: 1;
+    }
 	&__image {
         transform: translateX(200%);
         flex: 0 1 50%;
@@ -388,8 +394,6 @@
             background-color: $col-yellow;
         }
     }
-    &__gallery {
-    }
 }
 
 .gallery-iteam {
@@ -409,7 +413,39 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-        }  
+        } 
+    }
+    &__photo{
+        position: relative;
+    }
+    &__icons{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        background-color: rgba($color: #000000, $alpha: .5);
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        padding-bottom: 50px;
+        opacity: 0;
+        
+        i {
+            cursor: pointer;
+            font-size: rem(22);
+            margin-right: rem(10);
+            color: $col-yellow;
+            opacity: 0.7;
+            &:hover{
+                opacity: 1;
+                transition: all 0.3s ease 0s;
+            }
+        }
+        &:hover {
+            opacity: 1;
+            transition: all 0.3s ease 0s;
+        }
     }
     &__description {
         text-align: left;
@@ -425,13 +461,12 @@
             transition: all 0.3s ease 0s;
         }
     }
-    &__link{
-    }
     &__chef-position {
         font-weight: 400;
         @include adaptiveValue("font-size", 20, 16);
         line-height: math.div(30 , 20);
     }
+    
 }
 
 //========================================================================================================================================================
@@ -520,14 +555,9 @@
     @include adaptiveValue("padding-top",75 , 30);
     @include adaptiveValue("padding-bottom",75 , 30);
     &__item {
-        position: relative;
-        padding-bottom: percent(200,277);
         img{
-            position: absolute;
-            left: 0;
-            top: 0;
             width: 100%;
-            height: 100%;
+            height: auto;
             object-fit: cover;
         }
     }

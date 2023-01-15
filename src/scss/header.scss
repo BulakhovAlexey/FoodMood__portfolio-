@@ -2,7 +2,6 @@
 .header {
 	&.showBg {
 		background-color: rgb(15, 4, 4, 0.7);
-		//box-shadow: -1px 9px 9px 0px rgba(255,255,255,0.9);
 		transition: all 0.3s ease 0s;
 	}
 	color: $col-white;
@@ -140,13 +139,14 @@ html.menu-open .menu {
 	&__body {
 		display: block;
 		position: fixed;
+		overflow: auto;
 		width: 100%;
 		height: 100%;
 		background-color: $mainColor;
 		top: 0;
 		left: 0;
-		padding-top: 100px;
-		padding-left: 20px;
+		padding-top: rem(100);
+		padding-left: rem(20);
 	}
 	&__list {
 		display: block;
@@ -155,7 +155,7 @@ html.menu-open .menu {
 		padding: rem(10) 0;
 	}
 	&__download-app{
-		margin-top: 40px;
+		margin: rem(40) 0 rem(40) 0;
 		padding: 0;
 	}
 } 
