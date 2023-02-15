@@ -358,15 +358,12 @@
 @keyframes getStartedCircle {
     0%{
         transform: translateX(200%) rotate(400deg);
-        //transform: rotate(-400deg);
     }
     80%{
         transform: translateX(-50%) rotate(-40deg);
-        //transform: rotate(0);
     }
     100%{
         transform: translateX(0) rotate(0);
-        //transform: rotate(40deg);
     }
 }
 
@@ -395,7 +392,6 @@
         }
     }
 }
-
 .gallery-iteam {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(277px,1fr));
