@@ -397,8 +397,8 @@
                         behavior: "smooth"
                     });
                 }
-                functions_FLS(`[gotoBlock]: Юхуу...їдемо до ${targetBlock}`);
-            } else functions_FLS(`[gotoBlock]: Йой... Такого блоку немає на сторінці: ${targetBlock}`);
+                functions_FLS(`[gotoBlock]: крутим до - ${targetBlock}`);
+            } else functions_FLS(`[gotoBlock]: нет такого блока: ${targetBlock}`);
         };
         function ssr_window_esm_isObject(obj) {
             return null !== obj && "object" === typeof obj && "constructor" in obj && obj.constructor === Object;
