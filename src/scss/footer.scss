@@ -1,6 +1,7 @@
 //====================================================================================================
 .footer {
     text-align: left;
+    background-color: white;
     &__body {
         @include adaptiveValue("padding-top",89 ,30 );
         @include adaptiveValue("padding-bottom",201 ,60 );
@@ -28,8 +29,6 @@
         @include adaptiveValue("font-size", 17,14 );
         line-height: math.div(26 , 17);
     }
-    &__social {
-    }
     &__social-link {
         &:not(:last-child) {
             margin-right: rem(50);
@@ -42,7 +41,6 @@
                 transition: color .3s;
             }
         }
-
     }
     &__copy {
         display: flex;
@@ -68,7 +66,6 @@
         line-height: math.div(36 , 24);
         margin-bottom: em(47,24);
     }
-    
     &__list {
         li {
             &:not(:last-child) {

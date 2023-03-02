@@ -18,6 +18,20 @@
 		align-items: center;
 		padding: rem(35) 0;
 		font-weight: 700;
+		position: relative;
+		z-index: 5;
+		transition: all 0.5s ease 0.2s;
+		&::after{
+			content:'';
+			position: absolute;
+			z-index: 4;
+			width: 100%;
+			height: 100%;
+			left: 0;
+			top: 0;
+			background-color: $mainColor;
+			transform: translateX(-300%);
+		}
 	}
 	&__logo {
 		position: relative;
@@ -32,6 +46,22 @@
 		display: flex;
 		align-items: center;
 		justify-content: flex-end;
+		position: relative;
+		z-index: 4;
+		@media (max-width:$mobile){
+			transition: all 0.5s ease 0s;
+			display: block;
+			position: fixed;
+			overflow: auto;
+			width: 100%;
+			height: 100%;
+			background-color: $mainColor;
+			top: 0;
+			left: 0;
+			padding-top: rem(100);
+			padding-left: rem(20);
+			transform: translateX(-300%);
+		}
 	}
 	&__list {
 		display: flex;
@@ -39,10 +69,17 @@
 		align-items: center;
 		margin-right: rem(54);
 		@include adaptiveValue("margin-right",54 ,20,0,1230,768 );
+		@media (max-width:$mobile){
+			display: block;
+			transition: all 0.5s ease 0s;
+		}
 	}
 	&__item {
 		&:not(:last-child) {
 			@include adaptiveValue("margin-right",44 ,15,0,1230,768 );
+		}
+		@media (max-width:$mobile){
+			padding: rem(10) 0;
 		}
 	}
 	&__link {
@@ -57,6 +94,10 @@
 	&__download-app {
 		padding: 0 rem(10);
 		min-width: 160px;
+		@media (max-width:$mobile){
+			margin: rem(40) 0 rem(40) 0;
+			padding: 0;  
+		}
 	}
 	&__button {
 		padding: em(13) em(45);
@@ -73,18 +114,6 @@
 		}
 	}
 }
-@media (max-width: em(768)){
-	.menu {
-		&__body {
-			display: none;
-		}
-	}
-}
-
-//====================================================================================================
-
-//Burger
-
 .icon-menu {
 	display: none;
 	@media (max-width: $mobile) {
@@ -135,28 +164,12 @@
 		}
 	}
 }
-html.menu-open .menu {
-	&__body {
-		display: block;
-		position: fixed;
-		overflow: auto;
-		width: 100%;
-		height: 100%;
-		background-color: $mainColor;
-		top: 0;
-		left: 0;
-		padding-top: rem(100);
-		padding-left: rem(20);
-	}
-	&__list {
-		display: block;
-	}
-	&__item{
-		padding: rem(10) 0;
-	}
-	&__download-app{
-		margin: rem(40) 0 rem(40) 0;
-		padding: 0;
-	}
+html.menu-open .menu__body {
+	transform: translateX(0);
+	transition: all 0.5s ease 0.2s;
 } 
+html.menu-open .header__inner::after{
+	transform: translateX(0);
+	transition: all 0.5s ease 0.2s;
+}
 

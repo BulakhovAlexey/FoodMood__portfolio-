@@ -1,12 +1,21 @@
 //====================================================================================================
 // start-block
-
 .start-block {
     @include adaptiveValue("padding-bottom",184 ,40);
     @include adaptiveValue("padding-top",149 ,120);
-    background: url(@img/bg-start.jpg) no-repeat  top center fixed;
-    min-height: rem(889);
+    min-height: 100vh;
     color: $col-white;
+    position: relative;
+    &::after{
+        content:'';
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        background: url(@img/bgStart1.jpg) center/cover no-repeat;
+        z-index: -1;
+    }
     &__text {
         font-weight: 700;
         @include adaptiveValue("font-size", 26, 18);
@@ -23,12 +32,14 @@
         transition: all 0.7s ease 0s;
     }
     &__button {
+        display: block;
         padding: rem(12) rem(50);
         font-weight: 700;
         font-size: rem(14);
         line-height: math.div(21 , 14);
         background-color: $col-yellow;
         border-radius: 6px;
+        max-width: rem(209);
         &:hover {
 			box-Shadow: 2px -2px 9px 2px rgba(255,255,255,0.5);
 			transition: all .3s;
@@ -40,48 +51,59 @@
     justify-content: flex-start;
     align-items: center;
     flex-wrap: wrap;
-    margin-bottom: em(79,17);
+    gap: rem(30);
+    @media (max-width:$mobileSmall){
+         gap: rem(10); 
+    }
+    @include adaptiveValue("margin-bottom", 79, 20);
     &__size {
         position: relative;
-        width: 205px;
-        height: 205px;
+        width: rem(205);
+        height: rem(205);
         background: $col-yellow;
-        border-radius: 50%;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         border-radius: 50%;
+        @media (max-width:$tablet){
+            width: rem(180);
+            height: rem(180);
+        }
+        @media (max-width:$mobile){
+            width: rem(150);
+            height: rem(150);
+        }
         &._watcher-view {
             animation: anim 2s linear infinite;
         }
     }
     &__percent {
         font-weight: 700;
-        font-size: rem(64);
+        @include adaptiveValue("font-size", 64,30 );
         line-height: math.div(60 , 64);
     }
     &__name-percent {
         text-transform: uppercase;
         font-weight: 700;
-        font-size: rem(32);
+        @include adaptiveValue("font-size", 32, 18);
         line-height: math.div(48 , 32);
     }
     &__description {
-        padding-left: rem(30);
         max-width: rem(324);
-        @include adaptiveValue("font-size",36 ,25 );
-        line-height: math.div(54 , 36);
-        &:hover{
-            text-shadow: 5px 3px 9px rgba($col-yellow, .7);
-			transition: all .3s;
+        a{
+            display: block;
+            @include adaptiveValue("font-size",36 ,25 );
+            line-height: math.div(54 , 36);
+            color: rgba($col-yellow, 1);
+            &:hover{
+                text-shadow: 5px 3px 9px rgba($col-yellow, .7);
+                transition: all .3s;
+            }
         }
-        @media (max-width: em(559)){
-            padding: rem(10) 0 0 0;      
-        }
-    }
-}
 
+        }
+}
 @keyframes circle {
     0% {
         right: -200%;
@@ -93,7 +115,6 @@
         right: 0%;
     }
 }
-
 @keyframes anim {
     0% {
         box-shadow: 1px 1px 60px 2px rgba(255,255,255,0.53);
@@ -105,25 +126,33 @@
         box-shadow: 1px 1px 60px 2px rgba(255,255,255,0.53);
     }
 }
-
 //====================================================================================================
  //categories
-
  .categories {
     box-shadow: 0px -2px 11px 5px rgb(255 255 255 / 74%);
     padding: rem(27) 0 rem(40) 0;
     text-align: center;
+    background-color: white;
     &._watcher-view .categories__title{
         transform: translateX(0);
-    }
-    &__row {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(277px,1fr));
-        gap: rem(30)
     }
     &__title {
         transform: translateX(-300%);
         transition: all 0.8s linear .3s;
+    }
+    &__row {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: rem(20);
+    }
+    &__item{
+        justify-self: center;
+        @media (max-width:$tablet){
+            grid-column: span 2;
+        }
+        @media (max-width:$mobile){
+             grid-column: span 4; 
+        }
     }
 }
 .content-subtitle {
@@ -138,9 +167,14 @@
 }
 
 .item-categories {
+    &__photo{
+        img{
+            max-width: 100%;
+        }
+    }
     &__capture{
         text-align: center;
-        margin-top: rem(-80);
+        margin-top: rem(23);
     }
     &__name {
         font-weight: 700;
@@ -153,11 +187,8 @@
         line-height: math.div(30 , 20);
     }
 }
-
 //========================================================================================================================================================
-
 //delivery
-
 .delivery {
     background-color: $col-yellow;
     &__box {
@@ -205,11 +236,8 @@
         line-height: math.div(26 , 17);
     }
 }
-
 //========================================================================================================================================================
-
 //outlets
-
 .outlets {
     text-align: center;
     @include adaptiveValue("padding-top",76 ,30 );
@@ -224,7 +252,6 @@
         transition: all 0.8s ease 0.3s;
     }
 }
-
 .cards-outlet {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px,1fr));
@@ -264,14 +291,12 @@
         transition: all .3s;
     }
 }
-
 //========================================================================================================================================================
 //get-started
-
-
 .get-started {
      @include adaptiveValue("padding-top",108,30);
      @include adaptiveValue("padding-bottom",94,20);
+     background-color: white;
      &._watcher-view .get-started__image{
         animation: getStartedCircle 2s linear forwards;
      }
@@ -354,7 +379,6 @@
         line-height: math.div(26 , 17);
 	}
 }
-
 @keyframes getStartedCircle {
     0%{
         transform: translateX(200%) rotate(400deg);
@@ -366,15 +390,13 @@
         transform: translateX(0) rotate(0);
     }
 }
-
 //========================================================================================================================================================
-
 //team
-
 .team {
     text-align: center;
     @include adaptiveValue("padding-top", 47,30 );
     @include adaptiveValue("padding-bottom", 65, 40);
+    background-color: white;
     &__title {
         display: inline-block;
         padding-bottom: rem(25);
@@ -426,7 +448,6 @@
         align-items: flex-end;
         padding-bottom: 50px;
         opacity: 0;
-        
         i {
             cursor: pointer;
             font-size: rem(22);
@@ -462,22 +483,30 @@
         @include adaptiveValue("font-size", 20, 16);
         line-height: math.div(30 , 20);
     }
-    
 }
-
 //========================================================================================================================================================
-
 //discount
-
 .discount {
     @include adaptiveValue("padding-top", 85, 30);
     @include adaptiveValue("padding-bottom", 135, 40);
-    background: linear-gradient(91.02deg, #FFCC00 17.25%, rgba(255, 204, 0, 0) 178.38%);
+    background-color: white;
     color: $col-white;
+    position: relative;
+    &::after{
+        content:'';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        background: linear-gradient(91.02deg, #FFCC00 17.25%, rgba(255, 204, 0, 0) 178.38%);
+    }
     &__container {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        position: relative;
+        z-index: 2;
         @media (max-width:$mobileSmall){
             flex-wrap: wrap; 
        }
@@ -542,14 +571,12 @@
         box-shadow: none;
     }
 }
-
 //========================================================================================================================================================
-
 //logos
-
 .logos {
     @include adaptiveValue("padding-top",75 , 30);
     @include adaptiveValue("padding-bottom",75 , 30);
+    background-color: white;
     &__item {
         img{
             width: 100%;
